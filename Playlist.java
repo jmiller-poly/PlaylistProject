@@ -5,23 +5,49 @@ import java.util.ArrayList;
  * Refer to the project description to make sure you have access to all available methods
  */
 public class Playlist {
-    /**
-     * Fields-- This will likely just need to be the ArrayList of Songs. Reference our previous problems
-     * (CarDealership, Zoo) for structure on how this will look
+    //fields//
+    ArrayList<Song> songs;
+
+    //constructor//
+    public Playlist() {
+        ArrayList<Song> songs = new ArrayList<Song>();
+    }
+
+    //methods//
+
+    /*
+     * Prints out every song in the playlist
      */
+    public void printSongList() {
+        int index = 1;
+        for(Song s : songs) {
+            System.out.println(index + " | " + s.toString());
+            index++;
+        }
+    }
+
+    /*
+     * Internal function to check if a given position is valid
+     */
+    private boolean indexCheck(int pos) {
+        if(pos-2 < songs.size()) {
+            return true;
+        } else {
+            System.out.println("Invalid index");
+            return false;
+        }
+    }
 
 
+    public void likeSong(int position) {
+        boolean valid = indexCheck(position);
+        if(valid == true){
+            songs.get(position).like(position-1); //position as dictated by the printSongList method is always 1 more than the true index
+        }
+    }
 
 
      /**
-      * Constructor-- this doesn't need any parameters. You should just initialize the ArrayList and
-      * then use additional methods to add Songs in one-by-one
-      */
-
-
-      
-
-      /**
        * Methods-- Remember that you need to be able to complete all of the following:
        * Adding a song
        * 'liking' a song
