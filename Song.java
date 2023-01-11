@@ -4,19 +4,27 @@
  * @version
  */
 public class Song {
-    //Fields-- what information do we want each Song to store?
+    //fields//
+    String title; //Title of the song
+    String author; //The author of the song
+    int length; //The length of the song in seconds, will need to be converted into minute form later
+    boolean liked; //Whether the song is "liked" or not
 
 
+    //constructors//
+    public Song(String sTitle, String sAuthor, int sLength, boolean sLiked) {
+        title = sTitle;
+        author = sAuthor;
+        length = sLength;
+        liked = sLiked;
+    }
 
-
-    /**
-     * Constructor-- what information needs to be given to make a Song?
-     * How will you handle 'liked' songs? It makes sense for a Song not be 'liked' by default
-     */
-
-
-
-
+    public Song(String sTitle, String sAuthor, int sLength) { //most likely, if the song is liked will not be specified, so it will default to false
+        title = sTitle;
+        author = sAuthor;
+        length = sLength;
+        liked = false;
+    }
 
      /**
       * Methods-- what will you want each Song to do?
