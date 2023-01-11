@@ -26,7 +26,7 @@ public class Song {
         liked = false;
     }
 
-     //methods//
+    //methods//
     
     /*
      * Returns the title of the song
@@ -73,6 +73,13 @@ public class Song {
     }
 
     /*
+     * Inverts the "liked" status, if the song was previously unliked, it is now liked. Otherwise, it is now unliked. 
+     */
+    public void like() {
+        liked = !liked; 
+    }
+
+    /*
      * Returns a string with the following information about the song: Title, Author, Length, Liked
      */
     public String toString() {
@@ -82,12 +89,5 @@ public class Song {
         else {
             return "\"" + title + "\"" + " by " +  author + " (" + getLengthMinutes() + ")";
         }
-    }
-
-    /*
-     * Inverts the "liked" status, if the song was previously unliked, it is now liked. Otherwise, it is now unliked. 
-     */
-    public void like() {
-        liked = !liked; 
     }
 }
