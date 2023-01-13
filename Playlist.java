@@ -12,7 +12,7 @@ public class Playlist {
     //constructor//
     
     public Playlist() {
-        ArrayList<Song> songs = new ArrayList<Song>();
+        songs = new ArrayList<Song>();
     }
 
     //methods//
@@ -46,7 +46,7 @@ public class Playlist {
     public void likeSong(int position) {
         boolean valid = indexCheck(position);
         if(valid == true){
-            songs.get(position).like(); //position as dictated by the printSongList method is always 1 more than the true index
+            songs.get(position-1).like(); //position as dictated by the printSongList method is always 1 more than the true index
         }
     }
 
@@ -71,7 +71,7 @@ public class Playlist {
     public void removeSong(int position) {
         boolean valid = indexCheck(position);
         if(valid == true) {
-            songs.remove(position);
+            songs.remove(position-1);
         } else {
             System.out.println("Invalid index.");
         }
